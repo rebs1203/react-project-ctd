@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import TodoList from './TodoList.js'
 import AddTodoForm from './AddTodoForm.js'
 
-const TodoContainer = ({tableName}) => {
+const TodoContainer = () => {
     
     const [ todoList, setTodoList ] = useState([])
     const [ isLoading, setIsLoading ] = useState(true)
@@ -49,7 +49,7 @@ const TodoContainer = ({tableName}) => {
             }
         }
         fetchData()
-    }, [tableName])
+    }, [])
 
     const addTodo = async (title) => {
         const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_AIRTABLE_TABLE_NAME}`
