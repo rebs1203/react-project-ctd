@@ -11,7 +11,7 @@ const TodoContainer = ({tableName}) => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}`
+            const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_AIRTABLE_TABLE_NAME}`
     
             const options = {
                 method: 'GET',
@@ -52,7 +52,7 @@ const TodoContainer = ({tableName}) => {
     }, [tableName])
 
     const addTodo = async (title) => {
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}`
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_AIRTABLE_TABLE_NAME}`
     
             const options = {
                 method: 'POST',
@@ -80,7 +80,7 @@ const TodoContainer = ({tableName}) => {
 
     const removeTodo = async (id) => {
 
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/${id}`
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_AIRTABLE_TABLE_NAME}/${id}`
     
             const options = {
                 method: 'DELETE',
@@ -105,7 +105,7 @@ const TodoContainer = ({tableName}) => {
 
     return (
         <>
-        <h1 style={{fontSize: '400%', fontWeight: 900}}>{tableName}</h1>
+        <h1 style={{fontSize: '400%', fontWeight: 900}}>Todo List</h1>
         {
             isLoading ? (
                 <p>Loading...</p>

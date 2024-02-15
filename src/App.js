@@ -4,7 +4,6 @@ import TodoContainer from './components/TodoContainer.js';
 import { Button } from '@mui/material';
 
 function App() {
-  const tableName = 'Todo List'
 
   return (
     <>
@@ -66,7 +65,7 @@ function App() {
           <Route path='/new' element={
             <>
             <div className='todo-container'>
-              <TodoContainer tableName={tableName}/>
+              <TodoContainer />
             </div>
             </>
           }>
