@@ -1,0 +1,16 @@
+.todo-item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+    width: 80vh;
+    background-color: #cb4e46;
+    padding: 2%;
+}
+
+.list-item {
+    font-size: 120%;
+    border-bottom-style: inset;
+    list-style: none;
+}
+
+
