@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types'
 import { useState, useEffect } from 'react'
 import TodoList from './TodoList.js'
 import AddTodoForm from './AddTodoForm.js'
@@ -30,17 +29,11 @@ const TodoContainer = () => {
     
                 const data = await response.json()
     
-                data.records.sort((objectA, objectB) => {
-                    if (objectA < objectB) {
-                        return -1
-                    } else if (objectA > objectB) {
-                        return 1
-                    } else {
-                        return 0
-                    }
-                })
+                data.records?.sort((objectA, objectB) => {
+                    return objectA.fields?.title?.toUpperCase().localeCompare(objectB.fields?.title?.toUpperCase())
+                });
     
-                const todos = data.records.map((todo) => todo = {title: todo.fields.Name, id: todo.id})
+                const todos = data.records.map((todo) => todo = {title: todo.fields.title, id: todo.id})
 
                 setTodoList(todos)
                 setIsLoading(false)
@@ -60,7 +53,7 @@ const TodoContainer = () => {
                     Authorization:`Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ fields: { 'Name': title } })
+                body: JSON.stringify({ fields: { 'title': title } })
             }
 
             try {
@@ -120,8 +113,5 @@ const TodoContainer = () => {
     )
 }
 
-TodoContainer.prototype = {
-    tableName: PropTypes.string
-}
 
 export default TodoContainer 

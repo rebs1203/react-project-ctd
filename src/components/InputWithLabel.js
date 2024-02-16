@@ -4,7 +4,7 @@ import { TextField } from '@mui/material'
 import '../styles/InputWithLabel.css'
 
 
-const InputWithLabel = (props) => {
+const InputWithLabel = ({children, value, handleTitleChange}) => {
 
     const inputRef = useRef()
 
@@ -15,16 +15,16 @@ const InputWithLabel = (props) => {
 
     return (
         <div className='input-container'>
-        <label htmlFor='fullWidth'>{props.children}</label>
-        <TextField fullWidth label="Add your task" id="fullWidth" name='title' value={props.value} onChange={props.handleTitleChange} ref={inputRef}></TextField>
+        <label htmlFor='fullWidth'>{children}</label>
+        <TextField fullWidth label="Add your task" id="fullWidth" name='title' value={value} onChange={handleTitleChange} ref={inputRef}></TextField>
         </div>
     )
 }
 
 InputWithLabel.prototype = {
-    todoTitle: PropTypes.string,
     handleTitleChange: PropTypes.func,
-    children: PropTypes.node 
+    children: PropTypes.node,
+    value: PropTypes.string
 }
 
 export default InputWithLabel
