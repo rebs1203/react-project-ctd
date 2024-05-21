@@ -62,7 +62,7 @@ function App() {
             </div>
           }>
           </Route>
-          <Route path='https://react-project-ctd.onrender.com/new' element={
+          <Route path='/new' element={
             <>
             <div className='todo-container'>
               <TodoContainer />
