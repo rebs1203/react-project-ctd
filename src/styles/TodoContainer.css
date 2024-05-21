@@ -1,0 +1,10 @@
+.title-todo-list {
+    font-size: 400%;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 600px){
+    .title-todo-list {
+        font-size: 300%;
+    }
+}

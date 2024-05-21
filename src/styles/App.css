@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30%;
+  margin-top: 29%;
   margin-bottom: 35%;
   height: 100%;
   background-color: #F07167;
@@ -21,20 +21,49 @@
 .todo-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap-reverse;
   justify-content: center;
   align-items: center;
   margin-top: 10%;
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
   background-color: #F07167;
-  color: white
+  color: white;
 }
+
+.page-container {
+    width: 100vh;
+    overflow: hidden !important;
+}
+
 
 @media screen and (max-width: 600px){
     .todo-container {
-        width: 20vh;
+        width: 20%;
+        margin-left: 80%;
+    }
+    .welcome-h1 {
+        font-size: 200%;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .flower__glass {
+        margin-left: 25% !important;
+        width: 50vmin !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .welcome-h1 {
+        font-size: 150%;
+    }
+    .flower__glass {
+        margin-left: 25% !important;
+        width: 70vmin !important;
+    }
+}
+
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -83,11 +112,9 @@
 
 body{
     background-color: #F07167;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items:flex-end;
-    overflow: hidden;
 }
 
 .flower{
@@ -95,11 +122,11 @@ body{
 }
 
 .flower__glass{
-    width:20vmin;
+    width:35vmin;
     height: 30vmin;
+    margin-left: 24%;
     background-image: var(--color-glass);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-    opacity: .8;
     position: relative;
 }
 
@@ -107,7 +134,7 @@ body{
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 30;
     background-color: #182843;
     width: 100%;
     height: 2vmin;
@@ -117,7 +144,7 @@ body{
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 30;
     background-image: var(--color-water);
     width: 100%;
     height: 15vmin;

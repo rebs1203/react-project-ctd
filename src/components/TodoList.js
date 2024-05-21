@@ -4,11 +4,13 @@ import TodoListItem from './TodoListItem.js'
 const TodoList = ({todoList, onRemoveTodo}) => {
     return (
         <>
+        <div>
         <ul style={{height: '100%'}}>
             {todoList.map((item) => {
                 return <TodoListItem key={item.id} todo={item} onRemoveTodo={() => onRemoveTodo(item.id)}/>
             })}
         </ul>
+        </div>
         </>
     )
 }

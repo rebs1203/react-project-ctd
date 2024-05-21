@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import TodoList from './TodoList.js'
 import AddTodoForm from './AddTodoForm.js'
+import '../styles/TodoContainer.css'
 
 const TodoContainer = () => {
     
@@ -65,7 +66,7 @@ const TodoContainer = () => {
 
                 const data = await response.json()
 
-                setTodoList(prevTodoList => [...prevTodoList, { title: title, id: data.id }]);
+                setTodoList(prevTodoList => [{ title: title, id: data.id }, ...prevTodoList]);
             } catch (error) {
                 console.log(error)
             }
@@ -98,14 +99,14 @@ const TodoContainer = () => {
 
     return (
         <>
-        <h1 style={{fontSize: '400%', fontWeight: 900}}>Todo List</h1>
         {
             isLoading ? (
                 <p>Loading...</p>
-            ) : (
+                ) : (
                 <>
-                <AddTodoForm onAddTodo={addTodo}/>
-                <TodoList todoList={todoList} onRemoveTodo={removeTodo}/>
+                    <h1 className='title-todo-list'>Todo List</h1>
+                    <AddTodoForm onAddTodo={addTodo}/>
+                    <TodoList todoList={todoList} onRemoveTodo={removeTodo}/>
                 </>
             )
         } 

@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={
-            <>
+            <div className='page-container'>
             <div className='welcome-div'>
               <h1 className='welcome-h1'>Welcome to your Todo List!</h1>
               <Button variant="contained" href='/new'>Start Adding</Button>
@@ -59,7 +59,7 @@ function App() {
         </div>
         <div className="flower__glass"></div>
     </div>
-            </>
+            </div>
           }>
           </Route>
           <Route path='/new' element={
